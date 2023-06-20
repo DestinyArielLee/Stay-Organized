@@ -45,7 +45,7 @@ async function showTasks() {
         >
             <div class="content">
             <h4 class="title text-success fw-bold mb-4">Category: ${data[i].category}</h4>
-            <h6 class="title text-success fw-bold mb-4">By: Deadline: ${data[i].deadline}ToDo</h6>
+            <h6 class="title text-success fw-bold mb-4"> Deadline: ${data[i].deadline}</h6>
             <p class="description text-success">
             ${data[i].description}
             </p>
