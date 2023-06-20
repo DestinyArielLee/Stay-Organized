@@ -51,7 +51,7 @@ async function addToDo() {
     return;
 
   const toDoData = {
-    userid: selectedUser,
+    userid: +selectedUser,
     category: selectedCategory,
     description: descriptionText,
     deadline: deadlineDate,
@@ -65,7 +65,6 @@ async function addToDo() {
     },
     body: JSON.stringify(toDoData),
   });
-  const data = await response.json();
 }
 
 async function recentlyAddedToDos() {

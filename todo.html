@@ -16,13 +16,57 @@
 
 <body>
   <header>
-
+    <nav class="navbar navbar-expand-lg nav-bg-color">
+      <div class="container-fluid">
+        <a class="navbar-brand text-success" href="index.html"
+          ><b>Code Beans</b></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="todo.html"
+                >My To Do's</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="new_todo.html"
+                >Create New Tasks</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
-  <main>
+  <main class="container g-3">
+    <div class="row justify-content-center">
+<div class="col-12">
+  <h2 class="text-success text-center my-3">
     Choose User:
-    <select id="dropdown"></select>
-    <button id="search">Search</button>
-    <div id="tasks"></div>
+  </h2>
+</div>
+<div class="col-6 d-flex gap-2 justify-content-center">
+  <select class="form-select" id="dropdown"></select>
+  <div class="">
+    <button class="btn btn-success" id="search">Search</button>
+  </div>
+</div>
+</div>
+<div class="row justify-content-center g-2 my-2" id="tasks"></div>
   </main>
   <footer>
 
