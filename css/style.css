@@ -1,0 +1,47 @@
+/* .bgimg {
+    background-image: url(/images/headerpic.png);
+    min-height: 550px;
+    width: 100%;
+    background-size: cover;
+
+    position: relative;
+  } */
+
+.navwords {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.centered {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.centered-subtext {
+    position: absolute;
+    top: 210px;
+    left: 200px;
+}
+
+.header-btn {
+    position: absolute;
+    top: 330px;
+    left: 270px;
+}
+
+/* .centered-left {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+  }
+
+.left-text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  } */
+  
