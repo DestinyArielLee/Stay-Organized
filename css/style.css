@@ -1,0 +1,5 @@
+.form-select:focus,
+.form-control:focus {
+  border-color: green;
+  --bs-focus-ring-color: rgba(var(--bs-success-rgb), 0.25);
+}
