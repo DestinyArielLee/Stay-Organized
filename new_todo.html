@@ -95,7 +95,7 @@
               id="select_username"
               required
             >
-              <option value="">Choose one...</option>
+              <option disabled selected value="">Choose one...</option>
             </select>
             <div class="invalid-feedback">Please select a valid username.</div>
           </div>
@@ -107,8 +107,7 @@
               id="select_category"
               required
             >
-              <option selected disabled value="">Select category...</option>
-              <option>...</option>
+              <option disabled selected value="">Select category...</option>
             </select>
             <div class="invalid-feedback">Please select a valid category.</div>
           </div>
@@ -116,14 +115,16 @@
           <div class="col-md-4">
             <label for="select_urgency" class="form-label">Urgency</label>
             <select class="form-select focus-ring" id="select_urgency" required>
-              <option selected disabled value="">Specify urgency...</option>
-              <option>...</option>
+              <option disabled selected value="">Specify urgency...</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
             </select>
             <div class="invalid-feedback">Please indicate urgency.</div>
           </div>
 
           <div class="col-md-3">
-            <label for="input_date" class="form-label">Date</label>
+            <label for="input_date" class="form-label">Deadline date</label>
             <input
               type="text"
               class="form-control focus-ring"
