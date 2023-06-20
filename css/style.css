@@ -87,3 +87,35 @@ a:focus {
 .card[data-color="green"] {
   background: #b9efda;
 }
+
+.linkstext {
+    text-decoration: none;
+}
+
+.community {
+  display: inline-block;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.community:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.community:nth-child(3) {
+  transition-delay: 400ms;
+}
+.community:nth-child(4) {
+  transition-delay: 600ms;
+}
