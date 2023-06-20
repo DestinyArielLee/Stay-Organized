@@ -21,59 +21,38 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">Code Beans</a>
+      <nav class="navbar navbar-expand-lg nav-bg-color">
+        <div class="container-fluid">
+          <a class="navbar-brand text-success" href="index.html"
+            ><b>Code Beans</b></a
+          >
           <button
-            class="navbar-toggler d-lg-none"
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page"
-                  >Home <span class="visually-hidden">(current)</span></a
+                <a class="nav-link active" aria-current="page" href="todo.html"
+                  >My To Do's</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="dropdownId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Dropdown</a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="new_todo.html"
+                  >Create New Tasks</a
                 >
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">Action 1</a>
-                  <a class="dropdown-item" href="#">Action 2</a>
-                </div>
               </li>
             </ul>
-            <form class="d-flex my-2 my-lg-0">
-              <input
-                class="form-control me-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button
-                class="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
@@ -82,12 +61,20 @@
     <main class="container">
       <section class="row">
         <div class="col-12 text-center">
-          <h1 class="display-4 fw-bold text-success">Add a new ToDo!</h1>
+          <h1 class="display-4 fw-bold text-success my-4">Add a new ToDo!</h1>
         </div>
         <!-- Side bar -->
-        <aside class="col-4 border-end row g-4">FILL</aside>
+        <aside class="col-lg-4 border-end row g-4">
+          <div class="col-12 text-center">
+            <h3 class="fw-bold text-success">Recently added ToDos</h3>
+          </div>
+          <!-- Card -->
+          <div
+            class="col-12 content-card d-flex flex-column justify-content-center align-items-center"
+          ></div>
+        </aside>
 
-        <form class="row g-4 ms-2 needs-validation col-8" novalidate>
+        <form class="row g-4 ms-2 needs-validation col-lg-8" novalidate>
           <div class="col-md-4">
             <label for="select_username" class="form-label">Username</label>
             <select
@@ -116,14 +103,14 @@
             <label for="select_urgency" class="form-label">Urgency</label>
             <select class="form-select focus-ring" id="select_urgency" required>
               <option disabled selected value="">Specify urgency...</option>
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
             </select>
             <div class="invalid-feedback">Please indicate urgency.</div>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-4">
             <label for="input_date" class="form-label">Deadline date</label>
             <input
               type="text"
@@ -134,7 +121,7 @@
             />
             <div class="invalid-feedback">Please provide a date</div>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <label for="text_todo" class="form-label">Description</label>
             <textarea
               class="form-control focus-ring"

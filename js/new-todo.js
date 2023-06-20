@@ -6,6 +6,7 @@ const categoryDropdown = document.querySelector("#select_category");
 const urgencyDropdown = document.querySelector("#select_urgency");
 const deadlineInput = document.querySelector("#input_date");
 const descriptionTextInput = document.querySelector("#text_todo");
+const contentCard = document.querySelector(".content-card");
 
 async function fetcher(endPoint) {
   const response = await fetch(endPoint);
@@ -25,7 +26,10 @@ async function populateUsers() {
 }
 async function populateCategories() {
   const data = await fetcher("http://localhost:8083/api/categories");
-  populateDropdown(categoryDropdown, data);
+  for (const { name } of data) {
+    const option = new Option(name, name);
+    categoryDropdown.insertAdjacentElement("beforeend", option);
+  }
 }
 
 async function addToDo() {
@@ -47,27 +51,52 @@ async function addToDo() {
     return;
 
   const toDoData = {
-    userid: selectedUser,
+    userid: +selectedUser,
     category: selectedCategory,
     description: descriptionText,
     deadline: deadlineDate,
     priority: selectedUrgency,
   };
 
-  const response = await fetch('http://localhost:8083/api/todos', {
-    method: 'POST',
+  const response = await fetch("http://localhost:8083/api/todos", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
-    }, 
-    body: JSON.stringify(toDoData)
-  })
- const data = await response.json()
- console.log(data);
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(toDoData),
+  });
+}
+
+async function recentlyAddedToDos() {
+  const data = await fetcher("http://localhost:8083/api/todos");
+
+  const lastTodo = data.at(-1);
+  const users = await fetcher("http://localhost:8083/api/users");
+
+  const author = users.find((user) => user.id === +lastTodo.userid);
+
+  contentCard.innerHTML = `<div class="card-big-shadow">
+  <div
+    class="card card-just-text"
+    data-background="color"
+    data-color="green"
+    data-radius="none"
+  >
+    <div class="content">
+      <h4 class="title text-success fw-bold mb-4">Category: ${lastTodo.category}</h4>
+      <h6 class="title text-success fw-bold mb-4">By:  ${author.name}</h6>
+      <p class="description text-success">
+        ${lastTodo.description}
+      </p>
+    </div>
+  </div>
+</div>`;
 }
 
 window.addEventListener("load", () => {
   populateUsers();
   populateCategories();
+  recentlyAddedToDos();
 });
 
 // Loop over them and prevent submission
