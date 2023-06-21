@@ -9,9 +9,14 @@ const descriptionTextInput = document.querySelector("#text_todo");
 const contentCard = document.querySelector(".content-card");
 
 async function fetcher(endPoint) {
-  const response = await fetch(endPoint);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(endPoint);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Could not fetch data");
+  }
 }
 
 function populateDropdown(dropdown, dropdownData) {

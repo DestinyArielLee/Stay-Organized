@@ -28,8 +28,6 @@ async function showTasks() {
     const response = await fetch("http://localhost:8083/api/todos");
     const data = await response.json();
     const selectedUser = +userDropdown[userDropdown.selectedIndex].value; // Selecting actual user from dropdown
-    console.log(selectedUser);
-    console.log(data);
     let html = "";
     for (let i = 0; i < data.length; i++) {
       if (selectedUser == +data[i].userid) {
@@ -63,7 +61,7 @@ async function showTasks() {
     tasksDiv.innerHTML = html;
 
     // This code is not necessary since you already did it with the first loop
-    // data.forEach((user) => {
+    // data.forEach((user, index) => {
     //   if (userDropdown.value == data[user].userid) {
     //     tasksDiv.textContent += data[user].description;
     //   }
